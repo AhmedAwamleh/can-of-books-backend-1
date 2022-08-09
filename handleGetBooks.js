@@ -1,8 +1,8 @@
-const BooksModel = require('./booksModel');
+const { BookModel } = require('./booksModel');
 
 function handleGetBooks(req, res) {
     try {
-        BooksModel.find({}, (error, data) => {
+        BookModel.find({}, (error, data) => {
             if (error) console.log(`error reading from the db: ${error}`);
             else res.send(data);
         })
